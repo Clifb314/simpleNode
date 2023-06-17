@@ -9,7 +9,7 @@ http.createServer(async (req, res) => {
     const myURL = url.parse(req.url)
     console.log(myURL)
 
-    const filePath = `.${myURL.pathname}.html`
+    let filePath = myURL.path === '/' ? './index.html' : `.${myURL.path}.html`
     console.log(filePath)
 
     try {
